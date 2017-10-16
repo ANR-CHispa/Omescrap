@@ -2,7 +2,7 @@
 """
 Created on Mon May 29 15:44:42 2017
 
-@author: Michael Nauge 
+@author: Michael Nauge (Poitiers)
 """
 
 #lib pour la sauvegarde de configurations d'un lancement a l'autre
@@ -37,7 +37,7 @@ class UiOmeskrap(Frame):
         #si le fichier de config n'existe pas
         #on le cree avec des valeurs par defaut
         if len(r) ==0 :
-            self.config['DEFAULT'] = {'url': 'https://guarnido.nakalona.fr/items/browse?','dirOut': './DirOut/'} 
+            self.config['DEFAULT'] = {'url': 'https://hernandez.nakalona.fr/items/browse?','dirOut': './DirOut/'} 
             self.writeConfig()
         #sinon on fait test la remonter les données qu'il contient
         else:
@@ -47,7 +47,7 @@ class UiOmeskrap(Frame):
             except :
                 print('catch except in config.ini !')
                 #si il manque une key (car manipulation manuelle du fichier ini...) ça va generer une exception donc on l'intercept et on remet proprement des valeurs par defaut
-                self.config['DEFAULT'] = {'urlCur': 'https://guarnido.nakalona.fr/items/browse?','dirOut': './DirOut/'}  
+                self.config['DEFAULT'] = {'urlCur': 'https://hernandez.nakalona.fr/items/browse?','dirOut': './DirOut/'}  
                 #et on reaffecte
                 #puis reecrit
                 self.writeConfig()
@@ -107,10 +107,10 @@ class UiOmeskrap(Frame):
                     if res == 0 :
                         print('La collecte de données a été réalisée avec succès. Vous pouvez travailler :) ')
                     else:
-                        print('Des erreurs on été rencontrées essayez vérifiez votre url et relancez')
+                        print('Erreurs : vérifiez votre url et relancez')
                         print("l'url doit etre de la forme :   http://www.lorem.com/items/browse?")
                 except :
-                        print('Des erreurs on été rencontrées essayez vérifiez votre url et relancez')
+                        print('Erreurs : vérifiez votre url et relancez')
                         print("l'url doit etre de la forme :   http://www.lorem.com/items/browse?")
                 
                 
